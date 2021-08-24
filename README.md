@@ -9,6 +9,11 @@ To run the notebooks with regular CERN resources:
 * In the SWAN session, click on the item on the right-hand side that says "Download Project from git" ![Download Project from git](img/download_project_trim.png)
 * Copy-paste https://gitlab.cern.ch/mpitt/ppstools.git
 
+
+To clone the project to your local machine:
+```shell
+git clone ssh://git@gitlab.cern.ch:7999/mpitt/ppstools.git
+```
 ## Table of content
 
-1. [Dilepton analysis](https://gitlab.cern.ch/mpitt/ppstools.git) - Measurement of central exclusive production of lepton pair ($pp\to p\oplus\ell\ell\oplus p$).
+1. [Dilepton analysis](https://gitlab.cern.ch/mpitt/ppstools/exclusive-dilep) - Measurement of central exclusive production of lepton pair (pp&rarr;p&oplus;ll&oplus;p).
