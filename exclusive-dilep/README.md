@@ -4,4 +4,4 @@ Notebooks for extracting exclusive dilep signals using 2018 data collected by CM
 
 ## Table of content
 
-1. [Pre-processing](https://gitlab.cern.ch/mpitt/ppstools/exclusive-dilep/PrepareDataFrames.ipynb) - Notebook used to process data in NANOAOD format and dump dataframe with relevant variables
+1. [Pre-processing](https://gitlab.cern.ch/mpitt/ppstools/-/blob/master/exclusive-dilep/PrepareDataFrames.ipynb) - Notebook used to process data in NANOAOD format and dump dataframe with relevant variables
