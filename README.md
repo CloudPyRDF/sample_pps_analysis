@@ -16,4 +16,4 @@ git clone ssh://git@gitlab.cern.ch:7999/mpitt/ppstools.git
 ```
 ## Table of content
 
-1. [Dilepton analysis](https://gitlab.cern.ch/mpitt/ppstools/exclusive-dilep) - Measurement of central exclusive production of lepton pair (pp&rarr;p&oplus;ll&oplus;p).
+1. [Dilepton analysis](https://gitlab.cern.ch/mpitt/ppstools/-/tree/master/exclusive-dilep) - Measurement of central exclusive production of lepton pair (pp&rarr;p&oplus;ll&oplus;p).
