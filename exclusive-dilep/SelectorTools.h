@@ -17,29 +17,21 @@ using rvec_i = const RVec<int>;
 using rvec_b = const RVec<bool>;
 
 //
-rvec_b crossClean(const rvec_f &eta1,const rvec_f &phi1, const rvec_f &eta2, const rvec_f &phi2,float coneSize=0.4)
+float SelectProtonXi(const rvec_f &proton_xi, const rvec_i &proton_arm, float xi_ll, int arm)
 {
-    size_t nobjs(eta1.size());
-    std::vector<bool> isIso(nobjs,false);
+    size_t nobjs(proton_xi.size());   
+    float out_xi = -999;
     
-    size_t ntestobjs(eta2.size());
-    
-    //loop over the first list of objects
+    //loop over the list protons
     for(size_t i=0; i<nobjs; i++) {
         
-        //find the min. distance with respect to the second list of objects
-        float minDR(9999.);
-        for(size_t j=0; j<ntestobjs; j++) {         
-            float dR=DeltaR(eta1[i],eta2[j],phi1[i],phi2[j]);
-            if(dR>minDR) continue;
-            minDR=dR;
-        }
+        if(proton_arm[i]!=arm) continue;
         
-        //if above the required cone size the object is isolated
-        if(minDR>coneSize) isIso[i]=true;
+        if(abs(xi_ll-proton_xi[i])<abs(xi_ll-out_xi)) // select proton with closest xi value to xi reconstructed from the central system
+            out_xi=proton_xi[i];
+       
     }
-
-    return rvec_b(isIso.begin(), isIso.end());
+    
+    return out_xi;
 }
-
 

@@ -15,7 +15,7 @@ for stream in ['SingleMuon','DoubleMuon','SingleElectron']:
 #2018 datasets
 for stream in ['SingleMuon','DoubleMuon','EGamma']:
     for era in ['A','B','C','D']:
-        datasets['Run2018%s_%s'%(era,stream)]=['U2018_MiniAODv2_NanoAODv9-v1']
+        datasets['Run2018%s_%s'%(era,stream)]=['UL2018_MiniAODv2_NanoAODv9-v1']
 
 #corrections:
 
