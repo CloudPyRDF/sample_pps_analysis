@@ -30,6 +30,13 @@ def ConvertToEOSDirectory(ds):
         return '/eos/cms/store/mc/'+datasets[ds][0]+'/'+ds+'/NANOAODSIM/'+datasets[ds][1]
     return '/eos/cms/store/data/'+ds.replace('_','/')+'/NANOAOD/'+datasets[ds][0]
 
+def PrintFileSize(size):
+    unit='bytes'
+    if (size // 1000) > 0: size/=1000; unit='kB'
+    if (size // 1000) > 0: size/=1000; unit='MB'
+    if (size // 1000) > 0: size/=1000; unit='GB'
+    if (size // 1000) > 0: size/=1000; unit='TB'
+    return '%2.4f%s'%(size,unit)
 
 def listDatasets():
     
@@ -40,14 +47,10 @@ def listDatasets():
         fileList=getFilesForDataset(ds,eos=True)
         size=0; unit='bytes'
         for file in fileList: size+=os.path.getsize(file) 
-        if (size // 1000) > 0: size/=1000; unit='kB'
-        if (size // 1000) > 0: size/=1000; unit='MB'
-        if (size // 1000) > 0: size/=1000; unit='GB'
-        if (size // 1000) > 0: size/=1000; unit='TB'
         nfiles=len(fileList)
         msg='(No directories available in EOS for this dataset)'
         if nfiles:
-            msg=('(in EOS: nfiles = %d, size = %2.2f%s)'%(nfiles,size,unit))
+            msg=('(in EOS: nfiles = %d, size = %s)'%(nfiles,PrintFileSize(size)))
         print(ConvertToDASds(ds=ds),msg)
     return
 
