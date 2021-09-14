@@ -30,13 +30,14 @@ def ConvertToEOSDirectory(ds):
         return '/eos/cms/store/mc/'+datasets[ds][0]+'/'+ds+'/NANOAODSIM/'+datasets[ds][1]
     return '/eos/cms/store/data/'+ds.replace('_','/')+'/NANOAOD/'+datasets[ds][0]
 
-def PrintFileSize(size):
+def PrintFileSize(size, precision=2):
     unit='bytes'
     if (size // 1000) > 0: size/=1000; unit='kB'
     if (size // 1000) > 0: size/=1000; unit='MB'
     if (size // 1000) > 0: size/=1000; unit='GB'
     if (size // 1000) > 0: size/=1000; unit='TB'
-    return '%2.4f%s'%(size,unit)
+    round(size,precision)
+    return str(round(size,precision))+unit
 
 def listDatasets():
     
