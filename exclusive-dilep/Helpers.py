@@ -1,4 +1,4 @@
-import os
+import os, ROOT
 
 def PlotMe(historgam,opt=''):
     ROOT.gStyle.SetOptStat(0); ROOT.gStyle.SetTextFont(42)
